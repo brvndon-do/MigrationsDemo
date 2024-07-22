@@ -9,12 +9,7 @@ public class MyDbContext : DbContext
 
     public string DbPath { get; init; }
 
-    public MyDbContext()
-    {
-        var folder = Environment.SpecialFolder.LocalApplicationData;
-        var path = Environment.GetFolderPath(folder);
-        DbPath = Path.Join(path, "blogging.db");
-    }
+    public MyDbContext() => DbPath = Path.Join(Environment.CurrentDirectory, "blogging.db");
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlite($"Data Source={DbPath}");
 }
