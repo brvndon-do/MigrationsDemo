@@ -10,7 +10,7 @@ using MigrationsDemo.Entities;
 namespace MigrationsDemo.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20240722233322_InitialMigration")]
+    [Migration("20240730164410_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
